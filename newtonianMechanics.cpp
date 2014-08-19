@@ -49,6 +49,20 @@ double maxDist(double initVel)
 	return result;
 }
 
+double xLocation(double initVel, double time, double angle)
+{
+	double result;
+	result = initVel * time * cos(angle);
+	return result;
+}
+
+double yLocation(double initVel, double time, double angle)
+{
+	double result;
+	result = (initVel * time * sin(angle)) - (0.5 * 9.8 * pow(time, 2));
+	return result;
+}
+
 int main()
 {
 	double initVel, accel, times, finalVel, angle;
@@ -60,5 +74,7 @@ int main()
 	cout << "Velocity = " << findVelVAT(initVel, accel, times) << endl;
 	cout << "Max Height = " << maxHeight(initVel, angle) << endl;
 	cout << "Max Distance = " << maxDist(initVel) << endl;
+	cout << "X Location = " << xLocation(initVel, times, angle) << endl;
+	cout << "Y Location = " << yLocation(initVel, times, angle) << endl;
 	return 0;
 }
