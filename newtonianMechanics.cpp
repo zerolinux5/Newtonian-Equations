@@ -63,6 +63,13 @@ double yLocation(double initVel, double time, double angle)
 	return result;
 }
 
+double timeToGround(double initVel, double angle)
+{
+	double result;
+	result = 2 * initVel * sin(angle) / 9.8;
+	return result;
+}
+
 int main()
 {
 	double initVel, accel, times, finalVel, angle;
@@ -74,6 +81,7 @@ int main()
 	cout << "Velocity = " << findVelVAT(initVel, accel, times) << endl;
 	cout << "Max Height = " << maxHeight(initVel, angle) << endl;
 	cout << "Max Distance = " << maxDist(initVel) << endl;
+	cout << "Ground ETA = " << timeToGround(initVel, angle) << endl;
 	cout << "X Location = " << xLocation(initVel, times, angle) << endl;
 	cout << "Y Location = " << yLocation(initVel, times, angle) << endl;
 	return 0;
