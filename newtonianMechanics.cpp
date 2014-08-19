@@ -3,15 +3,21 @@
 
 using namespace std;
 
-double findDist(double velocity, double accel, double time)
+double findDistVAT(double initVel, double accel, double time)
 {
-	return (velocity * time  + 0.5 * accel * pow(time,2));
+	return (initVel * time  + 0.5 * accel * pow(time,2));
+}
+
+double findDistVVT(double initVel, double finalVel, double time)
+{
+	return ((initVel + finalVel) / 2 * time);
 }
 
 int main()
 {
-	int testInput1, testInput2, testInput3;
-	cin >> testInput1 >> testInput2 >> testInput3;
-	cout << findDist(testInput1, testInput2, testInput3) << endl;
+	int initVel, accel, times, finalVel;
+	cin >> initVel >> accel >> times >> finalVel;
+	cout << findDistVAT(initVel, accel, times) << endl;
+	cout << findDistVVT(initVel, finalVel, times) << endl;
 	return 0;
 }
