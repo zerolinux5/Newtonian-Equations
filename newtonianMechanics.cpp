@@ -2,10 +2,13 @@
 #include <math.h>
 
 using namespace std;
+template <class T>
 
-double findDistVAT(double initVel, double accel, double time)
+T findDistVAT(T initVel, T accel, T time)
 {
-	return (initVel * time  + 0.5 * accel * pow(time,2));
+	T result;
+	result = initVel * time  + 0.5 * accel * pow(time,2);
+	return result;
 }
 
 double findDistVVT(double initVel, double finalVel, double time)
