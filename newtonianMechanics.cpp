@@ -35,14 +35,30 @@ T findVelVAT(T initVel, T accel, T time)
 	return result;
 }
 
+double maxHeight(double initVel, double angle)
+{
+	double result;
+	result = pow(initVel, 2) * pow(sin(angle), 2) / (2 * 9.8);
+	return result;
+}
+
+double maxDist(double initVel)
+{
+	double result;
+	result = pow(initVel, 2) / 9.8;
+	return result;
+}
+
 int main()
 {
-	double initVel, accel, times, finalVel;
-	cin >> initVel >> accel >> times >> finalVel;
+	double initVel, accel, times, finalVel, angle;
+	cin >> initVel >> accel >> times >> finalVel >> angle;
 	double dist = findDistVAT(initVel, accel, times);
 	cout << "Distance = " << dist << endl;
 	cout << "Distance = " << findDistVVT(initVel, finalVel, times) << endl;
 	cout << "Velocity = " << findVelVAD(initVel, accel, dist) << endl;
 	cout << "Velocity = " << findVelVAT(initVel, accel, times) << endl;
+	cout << "Max Height = " << maxHeight(initVel, angle) << endl;
+	cout << "Max Distance = " << maxDist(initVel) << endl;
 	return 0;
 }
