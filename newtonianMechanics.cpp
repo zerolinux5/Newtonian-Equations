@@ -70,6 +70,20 @@ double timeToGround(double initVel, double angle)
 	return result;
 }
 
+double xVelocity(double initVel, double angle)
+{
+	double result;
+	result = initVel * cos(angle);
+	return result;
+}
+
+double yVelocity(double initVel, double angle, double time)
+{
+	double result;
+	result = initVel * sin(angle) - (9.8 * time);
+	return result;
+}
+
 int main()
 {
 	double initVel, accel, times, finalVel, angle;
@@ -84,5 +98,7 @@ int main()
 	cout << "Ground ETA = " << timeToGround(initVel, angle) << endl;
 	cout << "X Location = " << xLocation(initVel, times, angle) << endl;
 	cout << "Y Location = " << yLocation(initVel, times, angle) << endl;
+	cout << "X Velocity = " << xVelocity(initVel, angle) << endl;
+	cout << "Y Velocity = " << yVelocity(initVel, angle, times) << endl;
 	return 0;
 }
