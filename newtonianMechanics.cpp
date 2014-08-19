@@ -18,6 +18,11 @@ double findVelVAD(double initVel, double accel, double dist)
 	return (sqrt(pow(initVel,2) + 2 * accel * dist));
 }
 
+double findVelVAT(double initVel, double accel, double time)
+{
+	return (initVel + accel * time);
+}
+
 int main()
 {
 	int initVel, accel, times, finalVel;
@@ -26,5 +31,6 @@ int main()
 	cout << "Distance = " << dist << endl;
 	cout << "Distance = " << findDistVVT(initVel, finalVel, times) << endl;
 	cout << "Velocity = " << findVelVAD(initVel, accel, dist) << endl;
+	cout << "Velocity = " << findVelVAT(initVel, accel, times) << endl;
 	return 0;
 }
