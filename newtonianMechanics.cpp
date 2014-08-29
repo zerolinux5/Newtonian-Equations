@@ -103,6 +103,7 @@ T displacement(T initVel, T time, T angle){
 int main()
 {
 	double initVel, accel, times, finalVel, angle;
+	cout << "Enter Initial Velocity, Acceleration, Time, Final Velocity, Angle" << endl;
 	cin >> initVel >> accel >> times >> finalVel >> angle;
 	double dist = findDistVAT(initVel, accel, times);
 	cout << "Distance = " << dist << endl;
