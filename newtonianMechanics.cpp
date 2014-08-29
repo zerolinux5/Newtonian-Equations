@@ -35,59 +35,67 @@ T findVelVAT(T initVel, T accel, T time)
 	return result;
 }
 
-double maxHeight(double initVel, double angle)
+template <class T>
+T maxHeight(T initVel, T angle)
 {
-	double result;
+	T result;
 	result = pow(initVel, 2) * pow(sin(angle), 2) / (2 * 9.8);
 	return result;
 }
 
-double maxDist(double initVel)
+template <class T>
+T maxDist(T initVel)
 {
-	double result;
+	T result;
 	result = pow(initVel, 2) / 9.8;
 	return result;
 }
 
-double xLocation(double initVel, double time, double angle)
+template <class T>
+T xLocation(T initVel, T time, T angle)
 {
-	double result;
+	T result;
 	result = initVel * time * cos(angle);
 	return result;
 }
 
-double yLocation(double initVel, double time, double angle)
+template <class T>
+T yLocation(T initVel, T time, T angle)
 {
-	double result;
+	T result;
 	result = (initVel * time * sin(angle)) - (0.5 * 9.8 * pow(time, 2));
 	return result;
 }
 
-double timeToGround(double initVel, double angle)
+template <class T>
+T timeToGround(T initVel, T angle)
 {
-	double result;
+	T result;
 	result = 2 * initVel * sin(angle) / 9.8;
 	return result;
 }
 
-double xVelocity(double initVel, double angle)
+template <class T>
+T xVelocity(T initVel, T angle)
 {
-	double result;
+	T result;
 	result = initVel * cos(angle);
 	return result;
 }
 
-double yVelocity(double initVel, double time, double angle)
+template <class T>
+T yVelocity(T initVel, T time, T angle)
 {
-	double result;
+	T result;
 	result = initVel * sin(angle) - (9.8 * time);
 	return result;
 }
 
-double displacement(double initVel, double time, double angle){
-	double x = xLocation(initVel, time, angle);
-	double y = yLocation(initVel, time, angle);
-	double result;
+template <class T>
+T displacement(T initVel, T time, T angle){
+	T x = xLocation(initVel, time, angle);
+	T y = yLocation(initVel, time, angle);
+	T result;
 	result = sqrt(pow(x, 2) + pow(y, 2));
 	return result;
 }
