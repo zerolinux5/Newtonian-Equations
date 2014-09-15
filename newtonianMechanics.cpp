@@ -101,8 +101,14 @@ T displacement(T initVel, T time, T angle){
 }
 
 template <class T>
-T force(T mass, T accel){
+T forceAccel(T mass, T accel){
 	T force = mass * accel;
+	return force;
+}
+
+template <class T>
+T forceVel(T mass, T initVel, T finalVel, T times){
+	T force = mass * ((finalVel - initVel)/times);
 	return force;
 }
 
@@ -124,6 +130,7 @@ int main()
 	cout << "Displacement = " << displacement(initVel, times, angle) << endl;
 	cout << "X Velocity = " << xVelocity(initVel, angle) << endl;
 	cout << "Y Velocity = " << yVelocity(initVel, times, angle) << endl;
-	cout <<  "Force = " << force(mass, accel) << endl;
+	cout <<  "Force using accel = " << forceAccel(mass, accel) << endl;
+	cout <<  "Force using velocity = " << forceVel(mass, initVel, finalVel, times) << endl;
 	return 0;
 }
