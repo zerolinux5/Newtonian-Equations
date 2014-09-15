@@ -100,11 +100,17 @@ T displacement(T initVel, T time, T angle){
 	return result;
 }
 
+template <class T>
+T force(T mass, T accel){
+	T force = mass * accel;
+	return force;
+}
+
 int main()
 {
-	double initVel, accel, times, finalVel, angle;
-	cout << "Enter Initial Velocity, Acceleration, Time, Final Velocity, Angle" << endl;
-	cin >> initVel >> accel >> times >> finalVel >> angle;
+	double initVel, accel, times, finalVel, angle, mass;
+	cout << "Enter Initial Velocity, Acceleration, Time, Final Velocity, Angle, Mass" << endl;
+	cin >> initVel >> accel >> times >> finalVel >> angle >> mass;
 	double dist = findDistVAT(initVel, accel, times);
 	cout << "Distance = " << dist << endl;
 	cout << "Distance = " << findDistVVT(initVel, finalVel, times) << endl;
@@ -118,5 +124,6 @@ int main()
 	cout << "Displacement = " << displacement(initVel, times, angle) << endl;
 	cout << "X Velocity = " << xVelocity(initVel, angle) << endl;
 	cout << "Y Velocity = " << yVelocity(initVel, times, angle) << endl;
+	cout <<  "Force = " << force(mass, accel) << endl;
 	return 0;
 }
