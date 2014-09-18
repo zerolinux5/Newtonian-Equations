@@ -1,2 +1,3 @@
-This folder is for newtonian mechanics methods to be used for an app later
-
+The newtonian Mechanics file is for newtonian mechanics methods to be used for an app later
+Another file will be added for electromagnetic equations
+Will also add a makefile for ease of use when debugging
