@@ -9,6 +9,30 @@ class Point {
 	int get_y() {return y;};
 } point;	
 
+void Point::set_values (int inX, int inY) {
+	x = inX;
+	y = inY;
+}
+
+class PointMass {
+	int mass;
+	Point position;
+   public:
+	void set_values(int, Point);
+	void set_values(int, int, int);
+	int get_mass() { return mass;};
+} pointMass;
+
+void PointMass::set_values (int inMass, Point inPosition){
+	mass = inMass;
+	position.set_values(inPosition.get_x(), inPosition.get_y());
+}
+
+void PointMass::set_values (int inMass, int inX, int inY){
+	mass = inMass;
+	position.set_values(inX, inY);
+}
+
 using namespace std;
 
 template <class T>
