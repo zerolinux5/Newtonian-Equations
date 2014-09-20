@@ -1,6 +1,14 @@
 #include <iostream>
 #include <math.h>
 
+class Point {
+	int x, y;
+   public:
+	void set_values(int,int);
+	int get_x() {return x;};
+	int get_y() {return y;};
+} point;	
+
 using namespace std;
 
 template <class T>
