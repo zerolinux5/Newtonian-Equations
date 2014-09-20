@@ -2,33 +2,33 @@
 #include <math.h>
 
 class Point {
-	int x, y;
+	double x, y;
    public:
-	void set_values(int,int);
-	int get_x() {return x;};
-	int get_y() {return y;};
+	void set_values(double,double);
+	double get_x() {return x;};
+	double get_y() {return y;};
 } point;	
 
-void Point::set_values (int inX, int inY) {
+void Point::set_values (double inX, double inY) {
 	x = inX;
 	y = inY;
 }
 
 class PointMass {
-	int mass;
+	double mass;
 	Point position;
    public:
-	void set_values(int, Point);
-	void set_values(int, int, int);
-	int get_mass() { return mass;};
+	void set_values(double, Point);
+	void set_values(double, double, double);
+	double get_mass() { return mass;};
 } pointMass;
 
-void PointMass::set_values (int inMass, Point inPosition){
+void PointMass::set_values (double inMass, Point inPosition){
 	mass = inMass;
 	position.set_values(inPosition.get_x(), inPosition.get_y());
 }
 
-void PointMass::set_values (int inMass, int inX, int inY){
+void PointMass::set_values (double inMass, double inX, double inY){
 	mass = inMass;
 	position.set_values(inX, inY);
 }
