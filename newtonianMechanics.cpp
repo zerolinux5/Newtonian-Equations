@@ -7,7 +7,7 @@ class Point {
 	void set_values(double,double);
 	double get_x() {return x;};
 	double get_y() {return y;};
-} point;	
+};	
 
 void Point::set_values (double inX, double inY) {
 	x = inX;
@@ -21,7 +21,7 @@ class PointMass {
 	void set_values(double, Point);
 	void set_values(double, double, double);
 	double get_mass() { return mass;};
-} pointMass;
+};
 
 void PointMass::set_values (double inMass, Point inPosition){
 	mass = inMass;
