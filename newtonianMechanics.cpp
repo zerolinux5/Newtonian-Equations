@@ -9,6 +9,12 @@ double positionVTA(double initialVel, double time, double accel)
 	return result;
 }
 
+double positionVVT(double initialVel, double finalVel, double time)
+{
+	double result = 0.5*(initialVel + finalVel)*time;
+	return result;
+}
+
 template <class T>
 T findDistVAT(T initVel, T accel, T time)
 {
