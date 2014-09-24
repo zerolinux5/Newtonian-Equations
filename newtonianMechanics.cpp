@@ -3,19 +3,7 @@
 
 using namespace std;
 
-template <class T>
-T distanceVTA(T initialVel, T time, T accel)
-{
-	T result = initialVel*time + 0.5*accel*pow(time, 2);
-	return result;
-}
-
-template <class T>
-T distanceVVT(T initialVel, T finalVel, T time)
-{
-	T result = 0.5*(initialVel + finalVel)*time;
-	return result;
-}
+/*	Distance Equations	*/
 
 template <class T>
 T findDistVAT(T initVel, T accel, T time)
@@ -32,6 +20,8 @@ T findDistVVT(T initVel, T finalVel, T time)
 	result = (initVel + finalVel) / 2 * time;
 	return result;
 }
+
+/*	Velocity Equations	*/
 
 template <class T>
 T findVelVAD(T initVel, T accel, T dist)
@@ -146,7 +136,5 @@ int main()
 	cout << "Y Velocity = " << yVelocity(initVel, times, angle) << endl;
 	cout <<  "Force using accel = " << forceAccel(mass, accel) << endl;
 	cout <<  "Force using velocity = " << forceVel(mass, initVel, finalVel, times) << endl;
-	cout <<  "Distance from velocity and acceleration = " << distanceVTA(initVel, times, accel) << endl;
-	cout <<  "Distance from initial and final velocities = " << distanceVVT(initVel, finalVel, times) << endl;
 	return 0;
 }
