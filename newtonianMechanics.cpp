@@ -3,6 +3,12 @@
 
 using namespace std;
 
+double positionVTA(double initialVel, double time, double accel)
+{
+	double result = initialVel*time + 0.5*accel*pow(time, 2);
+	return result;
+}
+
 template <class T>
 T findDistVAT(T initVel, T accel, T time)
 {
