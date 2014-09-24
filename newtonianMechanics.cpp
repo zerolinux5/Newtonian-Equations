@@ -3,15 +3,17 @@
 
 using namespace std;
 
-double distanceVTA(double initialVel, double time, double accel)
+template <class T>
+T distanceVTA(T initialVel, T time, T accel)
 {
-	double result = initialVel*time + 0.5*accel*pow(time, 2);
+	T result = initialVel*time + 0.5*accel*pow(time, 2);
 	return result;
 }
 
-double distanceVVT(double initialVel, double finalVel, double time)
+template <class T>
+T distanceVVT(T initialVel, T finalVel, T time)
 {
-	double result = 0.5*(initialVel + finalVel)*time;
+	T result = 0.5*(initialVel + finalVel)*time;
 	return result;
 }
 
