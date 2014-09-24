@@ -3,13 +3,13 @@
 
 using namespace std;
 
-double positionVTA(double initialVel, double time, double accel)
+double distanceVTA(double initialVel, double time, double accel)
 {
 	double result = initialVel*time + 0.5*accel*pow(time, 2);
 	return result;
 }
 
-double positionVVT(double initialVel, double finalVel, double time)
+double distanceVVT(double initialVel, double finalVel, double time)
 {
 	double result = 0.5*(initialVel + finalVel)*time;
 	return result;
@@ -144,5 +144,7 @@ int main()
 	cout << "Y Velocity = " << yVelocity(initVel, times, angle) << endl;
 	cout <<  "Force using accel = " << forceAccel(mass, accel) << endl;
 	cout <<  "Force using velocity = " << forceVel(mass, initVel, finalVel, times) << endl;
+	cout <<  "Distance from velocity and acceleration = " << distanceVTA(initVel, times, accel) << endl;
+	cout <<  "Distance from initial and final velocities = " << distanceVVT(initVel, finalVel, times) << endl;
 	return 0;
 }
