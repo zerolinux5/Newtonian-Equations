@@ -11,6 +11,7 @@ void Point::set_values (double inX, double inY) {
 	y = inY;
 }
 
+/* this can be an inherited class from point and make another for electric points
 class PointMass {
 	double mass;
 	Point position;
@@ -29,3 +30,4 @@ void PointMass::set_values (double inMass, double inX, double inY){
 	mass = inMass;
 	position.set_values(inX, inY);
 }
+*/
