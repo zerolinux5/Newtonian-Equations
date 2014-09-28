@@ -13,4 +13,10 @@ electomagnetics.o: electromagnetics.cpp
 	g++ -c electromagnetics.cpp
 
 clean:
-	rm electromagnetics newtonianMechanics *.o
+	rm electromagnetics newtonianMechanics supplimentaryFiles *.o
+
+test: supplimentaryFiles.o
+	g++ -o supplimentaryFiles supplimentaryFiles.o
+
+supplimentaryFiles.o: supplimentaryFiles.cpp
+	g++ -c supplimentaryFiles.cpp
