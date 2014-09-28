@@ -1,4 +1,8 @@
+#include <iostream>
+using namespace std;
+
 class Point {
+   protected:
 	double x, y;
    public:
 	void set_values(double,double);
@@ -31,3 +35,9 @@ void PointMass::set_values (double inMass, double inX, double inY){
 	position.set_values(inX, inY);
 }
 */
+
+int main()
+{
+	cout << "Runs" << endl;
+	return 0;
+}
