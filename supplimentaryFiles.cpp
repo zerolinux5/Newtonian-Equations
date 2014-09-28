@@ -28,26 +28,18 @@ void PointMass::setValues(double inMass, double inX, double inY){
 	y = inY;
 }
 
-/* this can be an inherited class from point and make another for electric points
-class PointMass {
-	double mass;
-	Point position;
+class PointCharge: public Point {
+	double charge;
    public:
-	void set_values(double, Point);
-	void set_values(double, double, double);
-	double get_mass() { return mass;};
+	void setValues(double, double, double);
+	double getCharge() { return charge;}
 };
 
-void PointMass::set_values (double inMass, Point inPosition){
-	mass = inMass;
-	position.set_values(inPosition.get_x(), inPosition.get_y());
+void PointCharge::setValues(double inCharge, double inX, double inY){
+	charge = inCharge;
+	x = inX;
+	y = inY;
 }
-
-void PointMass::set_values (double inMass, double inX, double inY){
-	mass = inMass;
-	position.set_values(inX, inY);
-}
-*/
 
 int main()
 {
@@ -58,5 +50,10 @@ int main()
 	PointMass p2;
 	p2.setValues(100,3,4);
 	cout << "Point 2: " << p2.getX() << "," << p2.getY() << " mass:" << p2.getMass() << endl;
+
+	PointCharge p3;
+	p3.setValues(200,1,9);
+	cout << "Point 3: " << p3.getX() << "," << p3.getY() << " charge:" << p3.getCharge() << endl;
+
 	return 0;
 }
